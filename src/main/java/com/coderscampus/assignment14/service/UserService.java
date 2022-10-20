@@ -8,7 +8,7 @@ import com.coderscampus.assignment14.domain.User;
 import com.coderscampus.assignment14.repository.UserRepository;
 
 @Service
-public class UserService {
+public class UserService {     
 	@Autowired
 	private UserRepository userRepo;
 

@@ -35,34 +35,19 @@ private UserService userService;
 	}
 
 
-//	public List<messageDto> getAllMessages() {
-//		
-//		List<Message> messageList = messageRepo.findAll();
-//		List<messageDto> messagesDto = new ArrayList<>();
-//		for (Message message:messageList) {
-//			messageDto messageDto = new messageDto();
-//			messageDto.setMessage(message.getMessage());
-//			messageDto.setUserId(message.getUser().getUserId());
-//			messageDto.setChannelId(message.getMessageId());
-//			messageDto.setUsername(message.getUser().getUsername());
-//			messagesDto.add(messageDto);
-//		}
-//		return messagesDto;
-//	}
-
 
 	public List<chatConnect> getMessageByChannelId(Long channelId) {
 		List<Message> messageList = messageRepo.findAllByChannelId(channelId);
-		List<chatConnect> messagesDto = new ArrayList<>();
+		List<chatConnect> dataAccess = new ArrayList<>();
 		for (Message message:messageList) {
-			chatConnect messageDto = new chatConnect();
-			messageDto.setMessage(message.getMessage());
-			messageDto.setUserId(message.getUser().getUserId());
-			messageDto.setChannelId(message.getMessageId());
-			messageDto.setUsername(message.getUser().getUsername());
-			messagesDto.add(messageDto);
+			chatConnect memo = new chatConnect();
+			memo.setMessage(message.getMessage());
+			memo.setUserId(message.getUser().getUserId());
+			memo.setChannelId(message.getMessageId());
+			memo.setUsername(message.getUser().getUsername());
+			dataAccess.add(memo);
 		}
-		return messagesDto;
+		return dataAccess;
 	}
 }	
 

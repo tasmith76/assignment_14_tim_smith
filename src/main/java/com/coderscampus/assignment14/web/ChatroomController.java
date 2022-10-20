@@ -72,17 +72,17 @@ public class ChatroomController {
 	@ResponseBody
 	@PostMapping("/messageSent/{channelId}")
 		private void messageReceived (@RequestBody chatConnect message, @PathVariable Long channelId) {
-		chatConnect messageDto = new chatConnect();
+		chatConnect messageDao = new chatConnect();
 		System.out.println(message.getChannelId());
-		messageDto.setChannelId(message.getChannelId());
-		messageDto.setMessage(message.getMessage());
-		messageDto.setUserId(message.getUserId());
+		messageDao.setChannelId(message.getChannelId());
+		messageDao.setMessage(message.getMessage());
+		messageDao.setUserId(message.getUserId());
 		messageService.createMessage(message,channelId);
 		
 	}
 	@ResponseBody
 	@PostMapping("/obtainMessages/{channelId}")
-		private List<chatConnect> obtainMessages(@PathVariable Long channelId) {
+		private List<chatConnect> obtainMessages(@PathVariable Long channelId) {  
 			
 			return messageService.getMessageByChannelId(channelId);
 		
