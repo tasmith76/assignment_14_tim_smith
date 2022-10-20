@@ -1,4 +1,4 @@
-package com.coderscampus.assignment14.demo.domain;
+package com.coderscampus.assignment14.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

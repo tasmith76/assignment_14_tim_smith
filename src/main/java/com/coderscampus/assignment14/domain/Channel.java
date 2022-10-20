@@ -1,4 +1,4 @@
-package com.coderscampus.assignment14.demo.domain;
+package com.coderscampus.assignment14.domain;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +12,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Channel {
+public class Channel {  
 	private Long channelId;
 	private String name;
 	private List<User> users = new ArrayList<>();

@@ -1,8 +1,9 @@
-package com.coderscampus.assignment14.demo.dto;
+package com.coderscampus.assignment14.dao;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class messageDto {
+public class chatConnect 
+{
 	@JsonProperty("message")
 	private String message;
 	@JsonProperty("userId")
