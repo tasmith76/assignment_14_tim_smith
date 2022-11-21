@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://thymeleaf.org">
+	<head>
+		<Title>Create New Chatroom</Title>
+		
+	</head>
+	<body>
+		<form action = "" method = "post">
+			<div>
+				<label>Name of New Chatroom</label>
+				<input type = "text" th:field = "${channel.name}"/>
+			</div>
+			
+			<button>Create Chatroom</button>
+		
+		
+		</form>
+		<a th:href = "welcome">Go Back</a>
+	</body>
+</html>

@@ -22,7 +22,7 @@ import com.coderscampus.assignment14.service.UserService;
 public class ChatroomController {
 	
 	@Autowired
-	private ChannelService channelService;
+	private ChannelService channelService;     
 	@Autowired
 	private UserService userService;
 	@Autowired
@@ -33,7 +33,7 @@ public class ChatroomController {
 		return "redirect:/welcome";
 	}
 	
-	@GetMapping("/welcome")
+	@GetMapping("/welcome") 
 	public String welcomePage(ModelMap model) {
 		Channel channel = new Channel();
 		List<Channel> allChannels = channelService.findAll();
@@ -42,8 +42,10 @@ public class ChatroomController {
 		}else {
 			channel = allChannels.get(0);
 		}
+		List<Channel> allChannelz=channelService.findAll();
+		
 		model.put("channel", channel);
-		model.put("channels", allChannels);
+		model.put("channels", allChannelz);
 		return "welcome";
 	}
 	@ResponseBody
@@ -85,6 +87,5 @@ public class ChatroomController {
 		private List<chatConnect> obtainMessages(@PathVariable Long channelId) {  
 			
 			return messageService.getMessageByChannelId(channelId);
-		
 	}
 }

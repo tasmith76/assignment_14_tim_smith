@@ -2,8 +2,7 @@ package com.coderscampus.assignment14.dao;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class chatConnect 
-{
+public class chatConnect {
 	@JsonProperty("message")
 	private String message;
 	@JsonProperty("userId")
@@ -12,34 +11,37 @@ public class chatConnect
 	private Long channelId;
 	@JsonProperty("username")
 	private String username;
-	
-	
+
 	public String getUsername() {
 		return username;
 	}
+
 	public void setUsername(String username) {
 		this.username = username;
 	}
+
 	public String getMessage() {
 		return message;
 	}
+
 	public void setMessage(String message) {
 		this.message = message;
 	}
+
 	public Long getUserId() {
 		return userId;
 	}
+
 	public void setUserId(Long userId) {
 		this.userId = userId;
 	}
+
 	public Long getChannelId() {
 		return channelId;
 	}
+
 	public void setChannelId(Long channelId) {
 		this.channelId = channelId;
 	}
-	
-	
-	
-	
+
 }

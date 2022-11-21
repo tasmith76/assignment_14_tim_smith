@@ -17,7 +17,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "users")
-public class User {
+public class User { 
 	private Long userId;
 	private String username;
 	private List<Message> message = new ArrayList<>();
